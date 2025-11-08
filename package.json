@@ -40,7 +40,8 @@
   "dependencies": {
     "@aws-sdk/client-secrets-manager": "^3.917.0",
     "@mongodb-solution-assurance/kozen": "^1.1.6",
-    "mongodb": "^6.17.0"
+    "mongodb": "^6.17.0",
+    "mongodb-client-encryption": "^6.5.0"
   },
   "devDependencies": {
     "@types/node": "^18.19.127",
