@@ -1,7 +1,7 @@
 {
   "name": "@mongodb-solution-assurance/kozen-secret",
   "version": "1.0.0",
-  "description": "Module for the Kozen framework that provides support for key vault secret managers.",
+  "description": "Module for the Kozen framework that provides support for key vault secret managers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -39,9 +39,10 @@
   },
   "dependencies": {
     "@aws-sdk/client-secrets-manager": "^3.917.0",
-    "@mongodb-solution-assurance/kozen": "^1.1.6",
+    "@mongodb-solution-assurance/kozen": "^1.1.9",
     "mongodb": "^6.17.0",
-    "mongodb-client-encryption": "^6.5.0"
+    "mongodb-client-encryption": "^6.5.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/node": "^18.19.127",
