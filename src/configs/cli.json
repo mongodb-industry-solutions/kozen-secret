@@ -3,7 +3,7 @@
         "target": "SecretCLIController",
         "type": "class",
         "lifetime": "transient",
-        "path": "../../../modules/secret/controllers",
+        "path": "controllers",
         "dependencies": [
             {
                 "key": "assistant",

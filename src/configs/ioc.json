@@ -3,7 +3,7 @@
         "target": "SecretManager",
         "type": "class",
         "lifetime": "singleton",
-        "path": "../../../modules/secret/services",
+        "path": "services",
         "args": [
             {
                 "type": "mdb",
@@ -37,7 +37,7 @@
         "target": "SecretManagerAWS",
         "type": "class",
         "lifetime": "singleton",
-        "path": "../../../modules/secret/services",
+        "path": "services",
         "args": [
             null
         ],
@@ -58,7 +58,7 @@
         "target": "SecretManagerMDB",
         "type": "class",
         "lifetime": "singleton",
-        "path": "../../../modules/secret/services",
+        "path": "services",
         "args": [
             null
         ],
