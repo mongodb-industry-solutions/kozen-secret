@@ -1,0 +1,22 @@
+{
+    "servers": {
+        "kozen": {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "kozen"
+            ],
+            "env": {
+                "MDB_URI": "mongodb+srv://<user>:<pass>@<cluster>/<database>?retryWrites=true&w=majority&appName=<app>",
+                "MDB_MASTER_KEY": "<master_key>",
+                "ATLAS_PROJECT_ID": "<project_id>",
+                "ATLAS_PRIVATE_KEY": "<private_key>",
+                "ATLAS_PUBLIC_KEY": "<public_key>",
+                "KOZEN_CONFIG": "kozen.js.json",
+                "KOZEN_LOG_LEVEL": "NONE",
+                "KOZEN_APP_TYPE": "mcp",
+            }
+        }
+    },
+    "inputs": []
+}
