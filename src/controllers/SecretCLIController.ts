@@ -36,14 +36,14 @@ export class SecretController extends CLIController {
             const result = await srvSecret!.save(key, value);
             this.logger?.info({
                 flow: this.getId(options as unknown as IConfig),
-                src: 'Controller:Secret:set',
+                src: 'Secret:Controller:set',
                 message: `✅ Secret '${key}' saved successfully.`
             });
             return result;
         } catch (error) {
             this.logger?.error({
                 flow: this.getId(options as unknown as IConfig),
-                src: 'Controller:Secret:set',
+                src: 'Secret:Controller:set',
                 message: `❌ Failed to resolve secret '${options.key}': ${(error as Error).message}`
             });
             return false;
@@ -68,13 +68,13 @@ export class SecretController extends CLIController {
             if (value) {
                 this.logger?.info({
                     flow: this.getId(options as unknown as IConfig),
-                    src: 'Controller:Secret:get',
+                    src: 'Secret:Controller:get',
                     message: `✅ Resolved secret '${key}': ${value}`
                 });
             } else {
                 this.logger?.info({
                     flow: this.getId(options as unknown as IConfig),
-                    src: 'Controller:Secret:get',
+                    src: 'Secret:Controller:get',
                     message: `🔍 Secret '${key}' not found.`
                 });
             }
@@ -82,7 +82,7 @@ export class SecretController extends CLIController {
         } catch (error) {
             this.logger?.error({
                 flow: this.getId(options as unknown as IConfig),
-                src: 'Controller:Secret:get',
+                src: 'Secret:Controller:get',
                 message: `❌ Failed to resolve secret '${options.key}': ${(error as Error).message}`
             });
             return null;
@@ -105,7 +105,7 @@ export class SecretController extends CLIController {
         } catch (error) {
             this.logger?.error({
                 flow: this.getId(options as unknown as IConfig),
-                src: 'Controller:Secret:metadata',
+                src: 'Secret:Controller:metadata',
                 message: `❌ Failed to resolve secret manager metadata: ${(error as Error).message}`
             });
             return null;

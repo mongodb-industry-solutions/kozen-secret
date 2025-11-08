@@ -69,7 +69,7 @@ export class SecretManagerMDB extends SecretManager {
                 this.logger?.warn({
                     flow: options?.flow,
                     category: VCategory.core.secret,
-                    src: 'Service:Secret:MDB:resolve',
+                    src: 'Secret:Service:MDB:resolve',
                     message: `Secret '${key}' not found in MongoDB collection: '${mdb.collection}'.`
                 });
                 return null;
@@ -86,7 +86,7 @@ export class SecretManagerMDB extends SecretManager {
             this.logger?.error({
                 flow: options?.flow,
                 category: VCategory.core.secret,
-                src: 'Service:Secret:MDB:resolve',
+                src: 'Secret:Service:MDB:resolve',
                 message: `Failed to retrieve secret '${key}' from MongoDB Secrets Manager. ${(error as Error).message}`
             });
             throw error;
@@ -134,7 +134,7 @@ export class SecretManagerMDB extends SecretManager {
             this.logger?.error({
                 flow: options?.flow,
                 category: VCategory.core.secret,
-                src: 'Service:Secret:MDB:save',
+                src: 'Secret:Service:MDB:save',
                 message: `Failed to store secret '${key}' in MongoDB Secrets Manager. ${(error as Error).message}`
             });
             throw error;
@@ -189,7 +189,7 @@ export class SecretManagerMDB extends SecretManager {
         this.logger?.warn({
             flow: options?.flow,
             category: VCategory.core.secret,
-            src: 'Service:Secret:MDB:createDataKey',
+            src: 'Secret:Service:MDB:createDataKey',
             message: 'Create Data Key',
             data: { dekId, keyAltName }
         });

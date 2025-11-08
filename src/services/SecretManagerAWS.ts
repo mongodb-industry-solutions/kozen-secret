@@ -42,7 +42,7 @@ export class SecretManagerAWS extends SecretManager {
             this.logger?.error({
                 flow: options?.flow,
                 category: VCategory.core.secret,
-                src: 'Service:Secret:AWS:resolve',
+                src: 'Secret:Service:AWS:resolve',
                 message: `Failed to retrieve secret '${key}' from AWS Secrets Manager. ${(error as Error).message}`
             });
             throw error;
