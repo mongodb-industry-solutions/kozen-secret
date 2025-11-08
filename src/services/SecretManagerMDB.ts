@@ -60,6 +60,11 @@ export class SecretManagerMDB extends SecretManager {
             // Initialize MongoDB client
             const client = await this.initClient(this.options);
 
+            // Validate collection presence
+            if (!mdb.collection) {
+                throw new Error("MongoDB collection is not defined.");
+            }
+
             // Get collection
             const collection = client!.db(mdb.database).collection(mdb.collection);
 
@@ -113,7 +118,12 @@ export class SecretManagerMDB extends SecretManager {
             // Initialize MongoDB client
             const client = await this.initClient(this.options);
 
-            // Get collection  
+            // Validate collection presence
+            if (!mdb.collection) {
+                throw new Error("MongoDB collection is not defined.");
+            }
+
+            // Get collection for secret storage
             const collection = client!.db(mdb.database).collection(mdb.collection);
 
             // Encrypt the value if necessary
@@ -123,7 +133,7 @@ export class SecretManagerMDB extends SecretManager {
             });
 
             // Insert or update the secret document
-            const result = await collection.updateOne(
+            const result = await collection?.updateOne(
                 { key },
                 { $set: { value, encrypted: true } },
                 { upsert: true }
@@ -180,7 +190,7 @@ export class SecretManagerMDB extends SecretManager {
      */
     protected async createDataKey(options?: ISecretManagerOptions) {
         const keyAltName = this.getKeyAlt(options);
-        const collection = options?.mdb?.database && this.client!.db(options?.mdb.database).collection(options?.mdb.collection) as any;
+        const collection = options?.mdb?.database && options?.mdb.collection && this.client!.db(options?.mdb.database).collection(options?.mdb.collection) as any;
         const existent = await collection?.findOne({ keyAltNames: keyAltName });
 
         // Create a data encryption key (DEK)

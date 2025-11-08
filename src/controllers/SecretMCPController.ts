@@ -1,7 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
 import { z } from "zod";
 import { MCPController } from "@mongodb-solution-assurance/kozen";
-import { ISecretManager } from "../models/Secret";
+import { ISecretManager } from "../models/SecretManager";
 
 export class SecretController extends MCPController {
 

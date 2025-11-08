@@ -7,7 +7,7 @@
  */
 
 import { IArgs, IMdbClientOpt } from "@mongodb-solution-assurance/kozen";
-import { Binary } from "mongodb";
+import { ICloudOptions } from "./CloudOptions";
 
 /**
  * Configuration interface for secret management backend
@@ -31,63 +31,13 @@ export interface ISecretManagerOptions {
      * Cloud provider authentication settings for AWS integration
      * @type {Object}
      */
-    cloud?: {
-        /**
-         * Cloud region for AWS services configuration
-         * @type {string}
-         */
-        region?: string;
-
-        /**
-         * Access key identifier for AWS authentication
-         * @type {string}
-         */
-        accessKeyId?: string;
-
-        /**
-         * Secret access key for AWS authentication
-         * @type {string}
-         */
-        secretAccessKey?: string;
-    };
+    cloud?: ICloudOptions;
 
     /**
      * MongoDB storage configuration for encrypted secret management
      * @type {Object}
      */
     mdb?: IMdbClientOpt;
-}
-
-/**
- * Secret manager interface defining storage and retrieval operations
- * @interface ISecretManager
- */
-export interface ISecretManager {
-
-    /**
-     * Secret manager configuration options for backend operations
-     * @type {ISecretManagerOptions}
-     */
-    options: ISecretManagerOptions;
-
-    /**
-     * Resolves a secret value from the configured backend
-     * @param {string} key - The secret key to resolve
-     * @param {ISecretManagerOptions} [options] - Optional configuration override
-     * @returns {Promise<string | null | undefined | number | boolean>} Promise resolving to the secret value
-     * @throws {Error} When secret resolution fails
-     */
-    resolve(key: string, options?: ISecretManagerOptions): Promise<string | null | undefined | number | boolean>;
-
-    /**
-     * Saves a secret value to the configured backend storage
-     * @param {string} key - The secret key to store
-     * @param {string | Binary} value - The secret value to store
-     * @param {ISecretManagerOptions} [options] - Optional configuration override
-     * @returns {Promise<boolean>} Promise resolving to true if save operation succeeds
-     * @throws {Error} When secret storage fails
-     */
-    save(key: string, value: string | Binary, options?: ISecretManagerOptions): Promise<boolean>;
 }
 
 /**

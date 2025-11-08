@@ -6,7 +6,8 @@
  * @version 1.0.5
  */
 import { Binary } from "mongodb";
-import { ISecretManager, ISecretManagerOptions } from "../models/Secret";
+import { ISecretManagerOptions } from "../models/Secret";
+import { ISecretManager } from "../models/SecretManager";
 import { BaseService, IIoC, ILogger, VCategory } from "@mongodb-solution-assurance/kozen";
 
 /**
@@ -54,6 +55,14 @@ export class SecretManager extends BaseService implements ISecretManager {
         this.prefix = 'secret:manager:';
     }
 
+    configure(options: ISecretManagerOptions): void {
+        this._options = this._options || {};
+        this._options.type = options.type || this._options.type;
+        this._options.flow = options.flow || this._options.flow;
+        this._options.cloud = { ...this._options.cloud, ...options.cloud };
+        this._options.mdb = { ...this._options.mdb, ...options.mdb };
+    }
+
     /**
      * Resolves a secret value from the configured backend
      * @public
@@ -84,14 +93,14 @@ export class SecretManager extends BaseService implements ISecretManager {
             if (!this.options?.type) {
                 throw new Error("SecretManager options or type is not defined.");
             }
-            const controller = await this.getDelegate<ISecretManager>(options.type || 'AWS');
+            const controller = await this.getDelegate<ISecretManager>((options.type || 'aws').toLowerCase());
             return controller.save(key, value, options);
         }
         catch (error) {
             this.logger?.error({
                 flow: options?.flow,
                 category: VCategory.core.secret,
-                src: 'Service:SecretManager:save',
+                src: 'Secret:Service:Manager:save',
                 message: (error as Error).message
             });
             return false;
@@ -115,14 +124,14 @@ export class SecretManager extends BaseService implements ISecretManager {
             if (!this.options?.type) {
                 throw new Error("SecretManager options or type is not defined.");
             }
-            const controller = await this.getDelegate<ISecretManager>(options.type || 'AWS');
+            const controller = await this.getDelegate<ISecretManager>((options.type || 'aws').toLowerCase());
             return await controller.resolve(key, options);
         }
         catch (error) {
             this.logger?.error({
                 flow: options?.flow,
                 category: VCategory.core.secret,
-                src: 'Service:SecretManager:getValue',
+                src: 'Secret:Service:Manager:getValue',
                 message: (error as Error).message
             });
             return null;

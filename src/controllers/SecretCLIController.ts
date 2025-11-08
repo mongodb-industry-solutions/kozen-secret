@@ -8,7 +8,8 @@
  * @version 1.1.0
  */
 import path from 'path';
-import { ISecretArgs, ISecretManager } from '../models/Secret';
+import { ISecretArgs } from '../models/Secret';
+import { ISecretManager } from '../models/SecretManager';
 import { CLIController, IAction, IArgs, IConfig } from '@mongodb-solution-assurance/kozen';
 
 /**
@@ -60,11 +61,21 @@ export class SecretController extends CLIController {
      * @throws {Error} When secret manager resolution fails or retrieval operation encounters errors
      * @public
      */
-    public async get(options: { key: string }): Promise<string | null> {
+    public async get(options: { key: string, driver: string }): Promise<string | null> {
         try {
-            const { key } = options;
+            const { key, driver } = options;
             const srvSecret = await this.assistant?.resolve<ISecretManager>('secret:manager');
-            const value = await srvSecret!.resolve(key);
+
+            if (!srvSecret) {
+                throw new Error("Failed to resolve SecretManager.");
+            }
+
+            srvSecret.configure({
+                flow: this.getId(options as unknown as IConfig),
+                type: driver
+            });
+
+            const value = await srvSecret.resolve(key);
             if (value) {
                 this.logger?.info({
                     flow: this.getId(options as unknown as IConfig),
@@ -137,6 +148,7 @@ export class SecretController extends CLIController {
         let parsed: Partial<ISecretArgs> = this.extract(args);
         parsed.action !== 'metadata' && (parsed.key = parsed.key || (process.env.KOZEN_SM_KEY as IAction));
         parsed.action === 'set' && (parsed.value = parsed.value || process.env.KOZEN_SM_VAL);
+        parsed.driver = process.env.KOZEN_SM_DRIVER || parsed.driver;
         return parsed as ISecretArgs;
     }
 }
