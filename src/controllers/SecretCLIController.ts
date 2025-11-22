@@ -131,7 +131,7 @@ export class SecretController extends CLIController {
      * @public
      */
     public async help(): Promise<void> {
-        const mod = await this.assistant?.get<IModule>('module:secret');
+        const mod = await this.assistant?.get<IModule>('module:@kozen/secret');
         const dir = process.env.DOCS_DIR || path.resolve(__dirname, '../docs');
         const helpText = await this.srvFile?.select('secret', dir);
         super.help({
