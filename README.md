@@ -12,11 +12,13 @@ Kozen-Secret bundles delegates for AWS Secrets Manager—focused on retrieving J
 The provider architecture is intentionally pluggable; future releases target additional enterprise vaults such as Azure Key Vault, Google Cloud Secret Manager, HashiCorp Vault, CyberArk Conjur, and 1Password Secrets Automation. Because the module relies on standard Kozen composition rules, it can co-exist with workflow modules that trigger rotations, audit access, or hydrate application configuration at deploy time—streamlining secret operations across automations inspired by Kozen Triggers’ self-hosted patterns [Kozen Triggers Wiki](https://github.com/mongodb-industry-solutions/kozen-trigger/wiki).
 
 ## 📚 References
-- [Kozen Wiki](https://github.com/mongodb-industry-solutions/kozen-engine/wiki)
 - [Kozen Triggers Wiki](https://github.com/mongodb-industry-solutions/kozen-trigger/wiki)
+- [Disclaimer and Usage Policy](https://github.com/mongodb-industry-solutions/kozen-engine/wiki/POLICY)
+- [How to Contribute to Kozen Ecosystem](https://github.com/mongodb-industry-solutions/kozen-engine/wiki/Contribute)
+- [Official Kozen Documentation](https://github.com/mongodb-industry-solutions/kozen-engine/wiki)
 - [AWS Secrets Manager Overview](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)
 - [MongoDB CSFLE Guide](https://www.mongodb.com/docs/manual/core/csfle/)
 
 ---
 
-← Previous: [Configuration](https://github.com/mongodb-industry-solutions/kozen-secret/wiki/Configuration) | Next: [Introduction](https://github.com/mongodb-industry-solutions/kozen-secret/wiki/Introduction)
+← Previous: [Configuration](https://github.com/mongodb-industry-solutions/kozen-secret/wiki/Configuration) | Next: [Introduction](https://github.com/mongodb-industry-solutions/kozen-secret/wiki/Introduction) →
