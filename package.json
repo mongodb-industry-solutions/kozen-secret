@@ -1,6 +1,6 @@
 {
-  "name": "@mongodb-solution-assurance/kozen-secret",
-  "version": "1.0.1",
+  "name": "@kozen/secret",
+  "version": "1.0.2",
   "description": "Module for the Kozen framework that provides support for key vault secret managers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "build": "tsc && npm run copy:txt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy:txt": "copyfiles -u 1 src/**/*.txt dist/",
-    "bin:kozen:ts": "ts-node node_modules/@mongodb-solution-assurance/kozen/dist/bin/kozen.js",
+    "bin:kozen:ts": "ts-node node_modules/@kozen/engine/dist/bin/kozen.js",
     "bin:kozen:js": "npx kozen"
   },
   "repository": {
@@ -33,13 +33,13 @@
   "bugs": {
     "url": "https://github.com/mongodb-industry-solutions/kozen-secret/issues"
   },
-  "homepage": "https://github.com/mongodb-industry-solutions/kozen-secret#readme",
+  "homepage": "https://github.com/mongodb-industry-solutions/kozen-secret/wiki",
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
     "@aws-sdk/client-secrets-manager": "^3.917.0",
-    "@mongodb-solution-assurance/kozen": "^1.1.10",
+    "@kozen/engine": "^1.1.13",
     "mongodb": "^6.17.0",
     "mongodb-client-encryption": "^6.5.0",
     "zod": "^3.25.76"

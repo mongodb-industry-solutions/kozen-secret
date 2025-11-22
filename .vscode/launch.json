@@ -29,7 +29,7 @@
       "runtimeExecutable": "ts-node",
       "console": "integratedTerminal",
       "runtimeArgs": [
-        "node_modules/@mongodb-solution-assurance/kozen/dist/bin/kozen.js"
+        "node_modules/@kozen/engine/dist/bin/kozen.js"
       ],
       "skipFiles": [
         "<node_internals>/**"

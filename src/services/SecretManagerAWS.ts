@@ -9,7 +9,7 @@ import { GetSecretValueCommand, SecretsManagerClient } from "@aws-sdk/client-sec
 import { Binary } from "mongodb";
 import { ISecretManagerOptions } from "../models/Secret";
 import SecretManager from "./SecretManager";
-import { VCategory } from "@mongodb-solution-assurance/kozen";
+import { VCategory } from "@kozen/engine";
 
 /**
  * @class SecretManagerAWS

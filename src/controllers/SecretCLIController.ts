@@ -10,7 +10,7 @@
 import path from 'path';
 import { ISecretArgs } from '../models/Secret';
 import { ISecretManager } from '../models/SecretManager';
-import { CLIController, IAction, IArgs, IConfig } from '@mongodb-solution-assurance/kozen';
+import { CLIController, IAction, IArgs, IConfig, IModule } from '@kozen/engine';
 
 /**
  * @class SecretController
@@ -131,9 +131,15 @@ export class SecretController extends CLIController {
      * @public
      */
     public async help(): Promise<void> {
+        const mod = await this.assistant?.get<IModule>('module:secret');
         const dir = process.env.DOCS_DIR || path.resolve(__dirname, '../docs');
         const helpText = await this.srvFile?.select('secret', dir);
-        super.help('TOOL: Secret Manager', helpText);
+        super.help({
+            title: `'${mod?.metadata?.alias || 'Secret' }' from '${mod?.metadata?.name}' package`,
+            body: helpText,
+            version: mod?.metadata?.version,
+            uri: mod?.metadata?.uri
+        });
     }
 
     /**

@@ -8,7 +8,7 @@
 import { Binary } from "mongodb";
 import { ISecretManagerOptions } from "../models/Secret";
 import { ISecretManager } from "../models/SecretManager";
-import { BaseService, IIoC, ILogger, VCategory } from "@mongodb-solution-assurance/kozen";
+import { BaseService, IIoC, ILogger, VCategory } from "@kozen/engine";
 
 /**
  * @class SecretManager
