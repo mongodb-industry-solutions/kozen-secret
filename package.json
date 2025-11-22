@@ -1,6 +1,6 @@
 {
   "name": "@kozen/secret",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Module for the Kozen framework that provides support for key vault secret managers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
