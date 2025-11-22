@@ -9,6 +9,9 @@
     "LICENSE",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "npm run bin:kozen:js --config=kozen.js.json",
     "dev": "npm run bin:kozen:ts --config=kozen.ts.json",
