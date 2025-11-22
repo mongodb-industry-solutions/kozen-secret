@@ -6,7 +6,7 @@
  * @version 1.0.5
  */
 
-import { IArgs, IMdbClientOpt } from "@mongodb-solution-assurance/kozen";
+import { IArgs, IMdbClientOpt } from "@kozen/engine";
 import { ICloudOptions } from "./CloudOptions";
 
 /**

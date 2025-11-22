@@ -9,7 +9,7 @@
 import { Binary, ClientEncryption, ClientEncryptionEncryptOptions, ClientEncryptionOptions, KMSProviders, MongoClient } from "mongodb";
 import { ISecretManagerOptions } from "../models/Secret";
 import SecretManager from "./SecretManager";
-import { VCategory } from "@mongodb-solution-assurance/kozen";
+import { VCategory } from "@kozen/engine";
 
 /**
  * @class SecretManagerMDB
