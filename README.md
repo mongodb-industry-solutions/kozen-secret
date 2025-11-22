@@ -21,4 +21,4 @@ The provider architecture is intentionally pluggable; future releases target add
 
 ---
 
-← Previous: [Configuration](https://github.com/mongodb-industry-solutions/kozen-secret/wiki/Configuration) | Next: [Introduction](https://github.com/mongodb-industry-solutions/kozen-secret/wiki/Introduction) →
+← Previous: [Home](https://github.com/mongodb-industry-solutions/kozen-secret/wiki) | Next: [Introduction](https://github.com/mongodb-industry-solutions/kozen-secret/wiki/Introduction) →
