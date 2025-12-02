@@ -3,7 +3,7 @@ import { z } from "zod";
 import { MCPController } from "@kozen/engine";
 import { ISecretManager } from "../models/SecretManager";
 
-export class SecretController extends MCPController {
+export class SecretMCPController extends MCPController {
 
     public async register(server: McpServer): Promise<void> {
         // select secrets

@@ -1,6 +1,6 @@
 {
   "name": "@kozen/secret",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Module for the Kozen framework that provides support for key vault secret managers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -42,10 +42,10 @@
   },
   "dependencies": {
     "@aws-sdk/client-secrets-manager": "^3.917.0",
-    "@kozen/engine": "^1.1.13",
+    "@kozen/engine": "^1.1.14",
     "mongodb": "^6.17.0",
     "mongodb-client-encryption": "^6.5.0",
-    "zod": "^3.25.76"
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@types/node": "^18.19.127",
@@ -53,6 +53,6 @@
     "cross-env": "^7.0.3",
     "ts-node": "^10.9.0",
     "tslint": "^5.8.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.9.3"
   }
 }
