@@ -45,10 +45,11 @@ export class SecretModule extends KzModule {
     }
 }
 
+export default SecretModule;
 export { ISecretArgs, ISecretManagerOptions } from './models/Secret';
 export { ISecretManager } from './models/SecretManager';
 export { SecretManager } from './services/SecretManager';
 export { SecretManagerAWS } from './services/SecretManagerAWS';
 export { SecretManagerMDB } from './services/SecretManagerMDB';
-export { SecretController } from './controllers/SecretCLIController';
-export { SecretController as SecretMCPController } from './controllers/SecretMCPController';
+export { SecretCLIController } from './controllers/SecretCLIController';
+export { SecretMCPController } from './controllers/SecretMCPController';

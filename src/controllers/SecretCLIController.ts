@@ -17,7 +17,7 @@ import { CLIController, IAction, IArgs, IConfig, IModule } from '@kozen/engine';
  * @extends CLIController
  * @description CLI controller for managing encrypted secrets and credentials.
  */
-export class SecretController extends CLIController {
+export class SecretCLIController extends CLIController {
 
     /**
      * Saves an encrypted secret to the configured secret management backend
