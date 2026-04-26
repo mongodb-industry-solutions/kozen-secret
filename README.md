@@ -2,6 +2,21 @@
 
 Kozen-Secret extends the Kozen automation ecosystem with a unified way to manage API keys, credentials, and certificates across multiple secret backends. By inheriting Kozen’s dependency injection, structured logging, and multi-interface runtime, teams can expose the same secret-management capabilities through CLI actions or Model Context Protocol (MCP) tools with minimal additional wiring [Kozen Wiki](https://github.com/mongodb-industry-solutions/kozen-engine/wiki).
 
+---
+
+## Disclaimer
+
+This repository was created as part of an initiative to promote best practices for integrating solutions with MongoDB. It is distributed under the [Apache 2.0 license](./LICENSE) and is open source. However, please note that this repository is **not actively maintained** by the MongoDB team, nor is it part of MongoDB's official product catalog.
+
+The use of this repository in production environments is solely at your own discretion and risk. MongoDB does not provide any guarantees, warranties, or technical support for this repository. Furthermore, MongoDB shall **not be held liable** for any issues, bugs, or damages caused by its use or implementation.
+
+Please carefully evaluate suitability and perform thorough testing before using this resource in a production environment.
+
+Thank you for understanding,
+The MongoDB Team
+
+---
+
 ## 🧭 Positioning within Kozen
 Kozen provides a lightweight task execution framework that mixes automation pipelines, IaC orchestrators, and MCP-aware assistants under one configuration-driven runtime [Kozen Wiki](https://github.com/mongodb-industry-solutions/kozen-engine/wiki). Kozen-Secret plugs into that foundation the same way other modules—such as Kozen Triggers for change-stream automation—register controllers and services via the Kozen IoC container [Kozen Triggers Wiki](https://github.com/mongodb-industry-solutions/kozen-trigger/wiki). This keeps the operator experience consistent: existing Kozen deployments can load the secret module through configuration, and newcomers can bootstrap both modules side by side.
 
